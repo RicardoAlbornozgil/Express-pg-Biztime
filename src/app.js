@@ -13,6 +13,11 @@ const industryRoutes = require("./routes/industries");
 // Middleware to parse JSON
 app.use(express.json());
 
+// Route to handle GET /
+app.get('/', (req, res) => {
+  res.send("Welcome to the BizTime API!");
+});
+
 // Use the routes
 app.use("/companies", companyRoutes);
 app.use("/invoices", invoiceRoutes);
